@@ -1,4 +1,4 @@
-package com.example.calculatorautotesting.steps.api.type_params;
+package com.example.calculatorautotesting.steps.api;
 
 
 import io.cucumber.java.DataTableType;

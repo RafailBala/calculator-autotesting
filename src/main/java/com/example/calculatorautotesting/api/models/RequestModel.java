@@ -1,7 +1,9 @@
 package com.example.calculatorautotesting.api.models;
 
 import com.google.gson.GsonBuilder;
+import lombok.Data;
 
+@Data
 public class RequestModel {
     private String method;
     private String body;
@@ -14,23 +16,6 @@ public class RequestModel {
         this.path = path;
         this.url = url;
     }
-
-    public String getMethod() {
-        return method;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
     @Override
     public String toString() {
         return new GsonBuilder()

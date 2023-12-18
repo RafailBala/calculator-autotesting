@@ -24,7 +24,7 @@ public class CalculationController {
             CalculationDto calculation = calculationService.calculation(calculationDto);
             if (calculation != null)
             // return new ResponseEntity<>(calculation, HttpStatus.OK);
-                return new ResponseEntity<>(calculation.getResult(), HttpStatus.OK);
+                return new ResponseEntity<>(calculation, HttpStatus.OK);
             else return new ResponseEntity<>("Нет данных!",HttpStatus.BAD_REQUEST);
         } catch (Exception ex) {
             return new ResponseEntity<>(ex.getMessage(),HttpStatus.BAD_REQUEST);

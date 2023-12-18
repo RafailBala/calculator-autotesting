@@ -1,6 +1,7 @@
 package com.example.calculatorautotesting.dto;
 
 import com.example.calculatorautotesting.model.Calculation;
+import com.google.gson.GsonBuilder;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,20 @@ public class CalculationDto {
     private String date;
     private String time;
     private String result;
+    public CalculationDto() {
+    }
+    public CalculationDto(Long id, String number_1, int notation_1, String number_2, int notation_2, String operation, String date, String time, String result) {
+        this.id = id;
+        this.number_1 = number_1;
+        this.notation_1 = notation_1;
+        this.number_2 = number_2;
+        this.notation_2 = notation_2;
+        this.operation = operation;
+        this.date = date;
+        this.time = time;
+        this.result = result;
+    }
+
     public Calculation toCalculation(){
         Calculation calculation = new Calculation();
         calculation.setId(id);
@@ -41,5 +56,12 @@ public class CalculationDto {
         calculationDto.setTime(calculation.getTime());
         calculationDto.setResult(calculation.getResult());
         return calculationDto;
+    }
+    @Override
+    public String toString() {
+        return new GsonBuilder()
+                .setPrettyPrinting()
+                .create()
+                .toJson(this);
     }
 }
